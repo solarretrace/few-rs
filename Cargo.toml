@@ -9,9 +9,7 @@ repository = "https://github.com/skysch/few-rs"
 description = "A generalization of `std::Option` allowing for up to two optional values"
 readme = "readme.md"
 keywords = ["option", "small-vec"]
-categories = []
-documentation = ""
-homepage = ""
+homepage = "https://github.com/skysch/few-rs"
 exclude = ["*.sublime-project", "*.sublime-workspace"]
 
 [lib]
