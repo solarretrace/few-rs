@@ -79,6 +79,18 @@ impl<T> Few<T> {
             _              => false,
         }
     }
+
+    /// Returns true if the `Few` is a `One` or `Two` value containing the given
+    /// value.
+    pub fn contains<U>(&self, x: &U) -> bool
+        where U: PartialEq<T>
+    {
+        match self {
+            Few::Zero      => false,
+            Few::One(v)    => x == v,
+            Few::Two(a, b) => x == a || x == b,
+        }
+    }
 }
 
 impl<T> Iterator for Few<T> {
