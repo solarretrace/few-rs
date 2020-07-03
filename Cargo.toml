@@ -4,11 +4,11 @@ version = "0.1.0"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
-# maintenance = { status = "experiemental" }
+maintenance = { status = "passively-maintained" }
 repository = "https://github.com/skysch/few-rs"
 description = "A generalization of `std::Option` allowing for up to two optional values"
 readme = "readme.md"
-keywords = ["option", "small-vec"]
+keywords = ["option", "smallvec", "set"]
 homepage = "https://github.com/skysch/few-rs"
 exclude = ["*.sublime-project", "*.sublime-workspace"]
 
