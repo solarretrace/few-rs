@@ -4,7 +4,7 @@
 
 This library provides a `Few` enum with three variants:
 
-```
+```rust
 pub enum Few<T> {
     Zero,
     One(T),
