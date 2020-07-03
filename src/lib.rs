@@ -6,7 +6,27 @@
 // This code is dual licenced using the MIT or Apache 2 license.
 // See licence-mit.md and licence-apache.md for details.
 ////////////////////////////////////////////////////////////////////////////////
-//! Few library.
+//! A generalization of `std::Option` allowing for up to two optional values.
+//! 
+//! This library provides a `Few` enum with three variants:
+//! 
+//! ```rust
+//! pub enum Few<T> {
+//!     Zero,
+//!     One(T),
+//!     Two(T, T),
+//! }
+//! ```
+//! 
+//! Very few methods are defined for it, and for most purposes, [`std::Option`],
+//! [`std::Vec`], or [`smallvec`] should be used instead. This library was
+//! developed to provide a data structure for pattern matching on the result of
+//! set-like `intersect`, `union`, and `minus` operations over contiguous
+//! ranges.
+//!
+//! [`std::Option`]: https://doc.rust-lang.org/stable/std/option/enum.Option.html
+//! [`std::Vec`]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
+//! [`smallvec`]: https://crates.io/crates/smallvec
 ////////////////////////////////////////////////////////////////////////////////
 #![warn(anonymous_parameters)]
 #![warn(bad_style)]
