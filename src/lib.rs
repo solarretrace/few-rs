@@ -24,6 +24,14 @@
 //! set-like `intersect`, `union`, and `minus` operations over contiguous
 //! ranges.
 //!
+//! # Features
+//!
+//! | Feature | Description |
+//! | ------- | ----------- |
+//! | "serde" | Enables serialization and deserialization of data using [serde](https://crates.io/crates/serde). |
+//!
+//! By default, there are no features enabled.
+//!
 //! [`std::Option`]: https://doc.rust-lang.org/stable/std/option/enum.Option.html
 //! [`std::Vec`]: https://doc.rust-lang.org/stable/std/vec/struct.Vec.html
 //! [`smallvec`]: https://crates.io/crates/smallvec
@@ -60,12 +68,17 @@
 #![warn(variant_size_differences)]
 #![warn(while_true)]
 
+// External library imports.
+#[cfg(feature = "serde")]
+use serde::{ Serialize, Deserialize };
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // Few
 ////////////////////////////////////////////////////////////////////////////////
 /// A type which may contain zero, one, or two of a value.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub enum Few<T> {
     /// No value present.
     Zero,
