@@ -124,6 +124,17 @@ impl<T> Few<T> {
             Few::Two(a, b) => x == a || x == b,
         }
     }
+
+    /// Maps an Few<T> to Few<U> by applying a function to a contained value.
+    pub fn map<F, U>(self, mut f: F) -> Few<U>
+        where F: FnMut(T) -> U,
+    {
+        match self {
+            Few::Zero      => Few::Zero,
+            Few::One(v)    => Few::One((f)(v)),
+            Few::Two(a, b) => Few::Two((f)(a), (f)(b)),
+        }
+    }
 }
 
 impl<T> Iterator for Few<T> {
