@@ -125,7 +125,7 @@ impl<T> Few<T> {
         }
     }
 
-    /// Maps an Few<T> to Few<U> by applying a function to a contained value.
+    /// Maps a `Few<T>` to `Few<U>` by applying a function to a contained value.
     pub fn map<F, U>(self, mut f: F) -> Few<U>
         where F: FnMut(T) -> U,
     {
@@ -223,6 +223,16 @@ impl<T> From<(Option<T>, Option<T>)> for Few<T> {
             (Some(a), None)    => Few::One(a),
             (None,    Some(b)) => Few::One(b),
             (Some(a), Some(b)) => Few::Two(a, b),
+        }
+    }
+}
+
+impl<T> Into<Option<(T, T)>> for Few<T> where T: Clone {
+    fn into(self) -> Option<(T, T)> {
+        match self {
+            Few::Zero      => None,
+            Few::One(v)    => Some((v.clone(), v)),
+            Few::Two(a, b) => Some((a, b)),
         }
     }
 }

@@ -1,10 +1,9 @@
 [package]
 name = "few"
-version = "0.1.4"
+version = "0.1.5"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
-maintenance = { status = "passively-maintained" }
 repository = "https://github.com/skysch/few-rs"
 description = "A generalization of `std::Option` allowing for up to two optional values"
 readme = "readme.md"

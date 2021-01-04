@@ -4,6 +4,12 @@
 The following is a change log, documenting added, removed, changed, depricated, and fixed features, along with the version number and official release date of that version.
 
 
+## Few 0.1.5  [2021-01-03]
+----------------------------------------------------
+
+### Added
++ Added pair conversion impl.
+
 ## Few 0.1.4  [2020-07-25]
 ----------------------------------------------------
 
