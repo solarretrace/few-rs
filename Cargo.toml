@@ -4,11 +4,11 @@ version = "0.1.5"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/skysch/few-rs"
+repository = "https://github.com/solarretrace/few-rs"
 description = "A generalization of `std::Option` allowing for up to two optional values"
 readme = "readme.md"
 keywords = ["option", "smallvec", "set"]
-homepage = "https://github.com/skysch/few-rs"
+homepage = "https://github.com/solarretrace/few-rs"
 exclude = ["*.sublime-project", "*.sublime-workspace"]
 
 [lib]
